@@ -20,9 +20,57 @@ code {
   height: 50px;
   line-height: 50px;
 }
-.tree__container {
+
+.tree-node {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+
+.node {
+  width: 150px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+}
+.node:not(.node-root).node::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background-color: black;
+}
+
+.node::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background-color: black;
+}
+
+.children {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: relative;
+}
+.children::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  background-color: black;
 }
