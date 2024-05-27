@@ -1,4 +1,4 @@
-export const NodeItem = ({ node }) => {
+export const NodeItem = ({ node, setRootCode }) => {
   if (!node) {
     return null;
   }
@@ -6,8 +6,10 @@ export const NodeItem = ({ node }) => {
   return (
     <div className="tree-node">
       <div className="node">
-        {node.info.code} <br />
-        {node.info.name}
+        <div className="node-code" onClick={() => setRootCode(node.info.code)}>
+          {node.info.code}
+        </div>
+        <div> {node.info.name}</div>
       </div>
       <div className="children">
         {node.left && <NodeItem node={node.left} />}

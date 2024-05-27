@@ -29,12 +29,21 @@ code {
   position: relative;
 }
 
+.node-root__container {
+  display: flex;
+}
+.top-search__button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
 .node {
   width: 150px;
   height: 50px;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -73,4 +82,11 @@ code {
   width: 50%;
   height: 1px;
   background-color: black;
+}
+.children.last-node::before {
+  display: none;
+}
+.node-code {
+  color: blue;
+  cursor: pointer;
 }
