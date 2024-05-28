@@ -1,6 +1,8 @@
-# Insurance Policyholder Relation Search System
+# Policyholder Relation Search System
 
 This project is a visual tool for exploring the relationships between insurance policyholders.
+
+**Deployment Link** : https://daphne-hsueh.github.io/insurance/
 
 ## Features
 
@@ -18,7 +20,7 @@ This project is a visual tool for exploring the relationships between insurance 
 
 To get started with this project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/yourusername/your-repo-name.git`
-2. Navigate to the project directory: `cd your-repo-name`
+1. Clone the repository: `git clone git@github.com:Daphne-Hsueh/insurance.git`
+2. Navigate to the project directory: `cd insurance`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
