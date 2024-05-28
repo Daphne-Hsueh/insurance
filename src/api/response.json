@@ -643,5 +643,133 @@
         "introducer_code": "0000000015"
       }
     ]
+  },
+  "0000000016": {
+    "code": "0000000016",
+    "name": "保戶 16",
+    "registration_Date": "2024-05-016",
+    "introducer_code": "0000000008",
+    "left": [],
+    "right": []
+  },
+  "0000000017": {
+    "code": "0000000017",
+    "name": "保戶 17",
+    "registration_Date": "2024-05-017",
+    "introducer_code": "0000000004",
+    "left": [],
+    "right": []
+  },
+  "0000000018": {
+    "code": "0000000018",
+    "name": "保戶 18",
+    "registration_Date": "2024-05-18",
+    "introducer_code": "0000000009",
+    "left": [],
+    "right": []
+  },
+  "0000000019": {
+    "code": "0000000019",
+    "name": "保戶 19",
+    "registration_Date": "2024-05-19",
+    "introducer_code": "0000000002",
+    "left": [],
+    "right": []
+  },
+  "0000000020": {
+    "code": "0000000020",
+    "name": "保戶 20",
+    "registration_Date": "2024-05-20",
+    "introducer_code": "0000000010",
+    "left": [],
+    "right": []
+  },
+  "0000000021": {
+    "code": "0000000021",
+    "name": "保戶 21",
+    "registration_Date": "2024-05-21",
+    "introducer_code": "0000000010",
+    "left": [],
+    "right": []
+  },
+  "0000000022": {
+    "code": "0000000022",
+    "name": "保戶 22",
+    "registration_Date": "2024-05-22",
+    "introducer_code": "0000000011",
+    "left": [],
+    "right": []
+  },
+  "0000000023": {
+    "code": "0000000023",
+    "name": "保戶 23",
+    "registration_Date": "2024-05-23",
+    "introducer_code": "0000000011",
+    "left": [],
+    "right": []
+  },
+  "0000000024": {
+    "code": "0000000024",
+    "name": "保戶 24",
+    "registration_Date": "2024-05-24",
+    "introducer_code": "0000000012",
+    "left": [],
+    "right": []
+  },
+  "0000000025": {
+    "code": "0000000025",
+    "name": "保戶 25",
+    "registration_Date": "2024-05-25",
+    "introducer_code": "0000000012",
+    "left": [],
+    "right": []
+  },
+  "0000000026": {
+    "code": "0000000026",
+    "name": "保戶 26",
+    "registration_Date": "2024-05-26",
+    "introducer_code": "0000000012",
+    "left": [],
+    "right": []
+  },
+  "0000000027": {
+    "code": "0000000027",
+    "name": "保戶 27",
+    "registration_Date": "2024-05-27",
+    "introducer_code": "0000000006",
+    "left": [],
+    "right": []
+  },
+  "0000000028": {
+    "code": "0000000028",
+    "name": "保戶 28",
+    "registration_Date": "2024-05-28",
+    "introducer_code": "0000000007",
+    "left": [],
+    "right": []
+  },
+  "0000000029": {
+    "code": "0000000029",
+    "name": "保戶 29",
+    "registration_Date": "2024-05-29",
+    "introducer_code": "0000000007",
+    "left": [],
+    "right": []
+  },
+  "0000000030": {
+    "code": "0000000030",
+    "name": "保戶 30",
+    "registration_Date": "2024-05-30",
+    "introducer_code": "00000000015",
+    "left": [],
+    "right": []
+  },
+  "0000000031": {
+    "code": "0000000031",
+    "name": "保戶 31",
+    "registration_Date": "2024-05-31",
+    "introducer_code": "00000000015",
+    "left": [],
+    "right": []
   }
 }

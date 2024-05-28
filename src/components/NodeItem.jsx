@@ -1,16 +1,19 @@
-export const NodeItem = ({ node, setRootCode, rootCode }) => {
+export const NodeItem = ({ node, setRootNodeCode, rootNodeCode }) => {
   if (!node) {
     return null;
   }
 
   let direct = "";
-  if (node.info.introducer_code === rootCode) {
+  if (node.info.introducer_code === rootNodeCode) {
     direct = "direct";
   }
   return (
     <div className="tree-node">
       <div className="node" id={direct}>
-        <div className="node-code" onClick={() => setRootCode(node.info.code)}>
+        <div
+          className="node-code"
+          onClick={() => setRootNodeCode(node.info.code)}
+        >
           {node.info.code}
         </div>
         <div>{node.info.name}</div>
@@ -19,15 +22,15 @@ export const NodeItem = ({ node, setRootCode, rootCode }) => {
         {node.left && (
           <NodeItem
             node={node.left}
-            setRootCode={setRootCode}
-            rootCode={rootCode}
+            setRootNodeCode={setRootNodeCode}
+            rootNodeCode={rootNodeCode}
           />
         )}
         {node.right && (
           <NodeItem
             node={node.right}
-            setRootCode={setRootCode}
-            rootCode={rootCode}
+            setRootNodeCode={setRootNodeCode}
+            rootNodeCode={rootNodeCode}
           />
         )}
       </div>

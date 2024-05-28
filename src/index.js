@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { makeServer } from "./mockServer";
+import { makeServer } from "./api/mockServer";
 
 if (process.env.NODE_ENV === "development") {
   makeServer();
