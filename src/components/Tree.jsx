@@ -7,14 +7,7 @@ export const Tree = ({ searchValue, setSearchValue }) => {
   const [rootNodeCode, setRootNodeCode] = useState("0000000001");
   const [currentNode, setCurrentNode] = useState(null);
 
-  useEffect(() => {
-    if (currentNode === undefined) {
-      alert("目前找不到符合的資料");
-      setRootNodeCode("0000000001");
-      fetchPolicyholder("0000000001").then(setCurrentNode);
-    }
-  }, [currentNode]);
-
+  //set root node to search value then fetch policyholder
   useEffect(() => {
     if (searchValue && searchValue !== rootNodeCode) {
       setRootNodeCode(searchValue);
@@ -22,6 +15,15 @@ export const Tree = ({ searchValue, setSearchValue }) => {
     }
     fetchPolicyholder(rootNodeCode).then(setCurrentNode);
   }, [rootNodeCode, searchValue, setSearchValue]);
+
+  //if current node is undefined (search value not found) then alert
+  useEffect(() => {
+    if (currentNode === undefined) {
+      alert("目前找不到符合的資料");
+      setRootNodeCode("0000000001");
+      fetchPolicyholder("0000000001").then(setCurrentNode);
+    }
+  }, [currentNode]);
 
   const handleTopSearch = async (code) => {
     if (currentNode && currentNode.code === "0000000001") {
