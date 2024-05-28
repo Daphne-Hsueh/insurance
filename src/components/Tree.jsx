@@ -27,9 +27,10 @@ function arrayToTree(arr) {
   return root;
 }
 
-export const Tree = ({ searchValue }) => {
+export const Tree = ({ searchValue, setSearchValue }) => {
   const [rootCode, setRootCode] = useState("0000000001");
   const [currentNode, setCurrentNode] = useState(null);
+
   useEffect(() => {
     const fetchPolicyholder = async () => {
       try {
@@ -39,24 +40,30 @@ export const Tree = ({ searchValue }) => {
         console.error("Error fetching policyholder:", error);
       }
     };
-    if (searchValue) {
+
+    if (searchValue && searchValue !== rootCode) {
       console.log("searchValue in tree", searchValue);
       setRootCode(searchValue);
+      setSearchValue("");
+    } else {
+      fetchPolicyholder();
     }
-
-    fetchPolicyholder();
-  }, [rootCode, searchValue]);
+  }, [rootCode, searchValue, setSearchValue]);
 
   const handleTopSearch = async () => {
-    if (currentNode.code === "0000000001") {
+    if (currentNode && currentNode.code === "0000000001") {
       alert("已經是最上層");
       return;
     } else {
       const response = await getTopPolicyholderAPI(currentNode.code);
-      console.log("response from search top", response.data);
+      console.log("response form top search", response.data.code);
       setCurrentNode(response.data);
+      setRootCode(response.data.code);
     }
   };
+
+  console.log("currentNode", currentNode);
+  console.log("rootCode", rootCode);
   return (
     <>
       {currentNode && (
@@ -75,9 +82,15 @@ export const Tree = ({ searchValue }) => {
             <NodeItem
               node={arrayToTree(currentNode.left)}
               setRootCode={setRootCode}
+              rootCode={rootCode}
             />
-            <NodeItem node={arrayToTree(currentNode.right)} />
+            <NodeItem
+              node={arrayToTree(currentNode.right)}
+              setRootCode={setRootCode}
+              rootCode={rootCode}
+            />
           </div>
+          <div className="white-cover"></div>
         </div>
       )}
     </>

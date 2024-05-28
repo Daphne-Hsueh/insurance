@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header onSearch={handleSearch} />
-      <Tree searchValue={searchValue} />
+      <Tree searchValue={searchValue} setSearchValue={setSearchValue} />
     </div>
   );
 }
