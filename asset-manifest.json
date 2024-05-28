@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/daphne-hsueh/insurance/static/css/main.ed4b6897.css",
-    "main.js": "/daphne-hsueh/insurance/static/js/main.ff3bb7d5.js",
-    "index.html": "/daphne-hsueh/insurance/index.html",
-    "main.ed4b6897.css.map": "/daphne-hsueh/insurance/static/css/main.ed4b6897.css.map",
-    "main.ff3bb7d5.js.map": "/daphne-hsueh/insurance/static/js/main.ff3bb7d5.js.map"
+    "main.css": "/insurance/static/css/main.ed4b6897.css",
+    "main.js": "/insurance/static/js/main.ff3bb7d5.js",
+    "index.html": "/insurance/index.html",
+    "main.ed4b6897.css.map": "/insurance/static/css/main.ed4b6897.css.map",
+    "main.ff3bb7d5.js.map": "/insurance/static/js/main.ff3bb7d5.js.map"
   },
   "entrypoints": [
     "static/css/main.ed4b6897.css",
