@@ -1,12 +1,45 @@
 .App {
-  margin: 50px;
-}
-.input__container {
-  background-color: lightgray;
-  height: 50px;
-  line-height: 50px;
+  margin: 0 50px;
+  overflow: hidden;
 }
 
+/* header-input */
+.input__container {
+  background-color: lightgray;
+  border-radius: 10px;
+  height: 50px;
+  line-height: 50px;
+  margin: 20px 0;
+  padding-left: 10px;
+}
+.input__box {
+  margin: 0 10px;
+  height: 19px;
+}
+h1 {
+  cursor: pointer;
+  width: 250px;
+}
+
+/* root node */
+.node-root__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.node.node-root {
+  background-color: lightyellow;
+}
+
+.top-search__button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: blue;
+}
+
+/* node */
 .tree-node {
   display: flex;
   justify-content: center;
@@ -15,23 +48,8 @@
   position: relative;
 }
 
-.node-root__container {
-  display: flex;
-}
-
-.node.node-root {
-  background-color: lightyellow;
-}
-#direct {
-  background-color: lightgreen;
-}
-.top-search__button {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-}
 .node {
-  width: 150px;
+  width: 120px;
   height: 50px;
   border: 1px solid black;
   border-radius: 10px;
@@ -44,6 +62,15 @@
   position: relative;
   background-color: lightgray;
 }
+#direct {
+  background-color: lightgreen;
+}
+.node-code {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* vertical line */
 .node:not(.node-root).node::before {
   content: "";
   position: absolute;
@@ -64,6 +91,8 @@
   background-color: black;
 }
 
+/* children & horizontal line*/
+
 .children {
   display: flex;
   justify-content: space-evenly;
@@ -77,14 +106,7 @@
   height: 1px;
   background-color: black;
 }
-.children.last-node::before {
-  display: none;
-}
-.node-code {
-  color: blue;
-  cursor: pointer;
-  text-decoration: underline;
-}
+
 .white-cover {
   background-color: white;
   z-index: 2;

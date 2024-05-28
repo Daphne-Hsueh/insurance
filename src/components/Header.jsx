@@ -20,11 +20,16 @@ export const Header = ({ onSearch }) => {
 
   return (
     <div className="header__container">
-      <h1>保護關係查詢</h1>
+      <h1 onClick={() => window.location.reload()}>保護關係查詢</h1>
       <hr />
       <div className="input__container">
         <span>保戶編號</span>
-        <input type="text" value={inputValue} onChange={handleInputChange} />
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          className="input__box"
+        />
         <button onClick={handleSearch}>查詢</button>
       </div>
       <div>關係圖</div>

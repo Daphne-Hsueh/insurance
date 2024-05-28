@@ -45,10 +45,9 @@ export const Tree = ({ searchValue, setSearchValue }) => {
       console.log("searchValue in tree", searchValue);
       setRootCode(searchValue);
       setSearchValue("");
-    } else {
-      fetchPolicyholder();
     }
-  }, [rootCode, searchValue, setSearchValue]);
+    fetchPolicyholder();
+  }, [rootCode, searchValue, setSearchValue, currentNode]);
 
   const handleTopSearch = async () => {
     if (currentNode && currentNode.code === "0000000001") {
@@ -62,10 +61,8 @@ export const Tree = ({ searchValue, setSearchValue }) => {
     }
   };
 
-  console.log("currentNode", currentNode);
-  console.log("rootCode", rootCode);
   return (
-    <>
+    <div>
       {currentNode && (
         <div className="tree-node">
           <div className="node-root__container">
@@ -78,7 +75,7 @@ export const Tree = ({ searchValue, setSearchValue }) => {
               上一階
             </button>
           </div>
-          <div className="children">
+          <div className="children ">
             <NodeItem
               node={arrayToTree(currentNode.left)}
               setRootCode={setRootCode}
@@ -93,6 +90,6 @@ export const Tree = ({ searchValue, setSearchValue }) => {
           <div className="white-cover"></div>
         </div>
       )}
-    </>
+    </div>
   );
 };
