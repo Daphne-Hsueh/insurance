@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { getPolicyholderAPI, getTopPolicyholderAPI } from "../api";
 import { NodeItem } from "./NodeItem";
 
 function arrayToTree(arr) {
@@ -31,33 +30,30 @@ export const Tree = ({ searchValue, setSearchValue }) => {
   const [rootCode, setRootCode] = useState("0000000001");
   const [currentNode, setCurrentNode] = useState(null);
 
-  useEffect(() => {
-    const fetchPolicyholder = async () => {
-      try {
-        const response = await getPolicyholderAPI(rootCode);
-        setCurrentNode(response.data);
-      } catch (error) {
-        console.error("Error fetching policyholder:", error);
-      }
-    };
+  const fetchPolicyholder = async (code) => {
+    const response = await fetch(`/api/policyholders?code=${code}`);
+    const data = await response.json();
+    setCurrentNode(data.code);
+  };
 
+  useEffect(() => {
     if (searchValue && searchValue !== rootCode) {
       console.log("searchValue in tree", searchValue);
       setRootCode(searchValue);
       setSearchValue("");
     }
-    fetchPolicyholder();
-  }, [rootCode, searchValue, setSearchValue, currentNode]);
+    fetchPolicyholder(rootCode);
+  }, [rootCode, searchValue, setSearchValue]);
 
-  const handleTopSearch = async () => {
+  const handleTopSearch = async (code) => {
     if (currentNode && currentNode.code === "0000000001") {
       alert("已經是最上層");
       return;
     } else {
-      const response = await getTopPolicyholderAPI(currentNode.code);
-      console.log("response form top search", response.data.code);
-      setCurrentNode(response.data);
-      setRootCode(response.data.code);
+      const response = await fetch(`/api/policyholders/${code}/top`);
+      const data = await response.json();
+      setCurrentNode(data.code);
+      setRootCode(data.code.code);
     }
   };
 
@@ -70,7 +66,10 @@ export const Tree = ({ searchValue, setSearchValue }) => {
               <div>{currentNode.code}</div>
               <div> {currentNode.name}</div>
             </div>
-            <button className="top-search__button" onClick={handleTopSearch}>
+            <button
+              className="top-search__button"
+              onClick={() => handleTopSearch(currentNode.code)}
+            >
               ^ <br />
               上一階
             </button>
